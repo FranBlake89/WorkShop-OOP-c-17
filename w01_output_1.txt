@@ -1,0 +1,29 @@
+Command Line:
+--------------------------
+1:D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\W01\x64\Debug\W01.exe
+2:D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\W01\day1.txt
+3:D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\W01\day2.txt
+--------------------------
+
+--------------------
+    Day 1
+--------------------
+Name          |Order Description        |Price w/Tax |Special Price
+ 0. Liz        | Deluxe Fish Tacos         | 10.16        |
+1 . Thomas     | BLT Sandwich              | 8.58         |
+2 . Lisa       | Noodle Dumpling Soup      | 6.77         |
+--------------------
+    Day 2
+--------------------
+Name          |Order Description        |Price w/Tax |Special Price
+3 . Ellen      | 12 Piece Sushi Set        | 12.53        |         -2.51
+ 4. Monica     | Reuben Sandwich           | 9.79         |         -1.96
+ 5. Katarina   | Pepperoni Pizza Slice     | 6.83         |         -1.37
+--------------------
+Recorded Delivery Food Orders
+--------------------
+Name          |Order Description        |Price w/Tax |Special Price
+ 6. Thomas     | BLT Sandwich              | 8.65         |
+7 . Lisa       | Noodle Dumpling Soup      | 6.83         |
+8 . Monica     | Reuben Sandwich           | 9.79         |         -1.96
+--------------------

@@ -5,7 +5,10 @@
 #include <iomanip>
 #include <fstream>
 #include "foodorder.h"
-#include "foodorder.h"
+//#include "foodorder.h"
+
+using namespace sdds;
+
 
 /* input file format: a comma separated set of fields with a consistent format of
 <Order Tag>,<Customer Name>,<Order Description>,<Price>,<Daily Special Status>
@@ -21,8 +24,9 @@
 
 // TODO: write the prototype for the main function
 //         to accept command line arguments
+// >>>   + INFO: https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
 
-{
+int main( int argc, char** argv ) {  // RESOLVE PROBLEM
 	std::cout << "Command Line:\n";
 	std::cout << "--------------------------\n";
 	// TODO: print the command line here, in the format
@@ -31,6 +35,9 @@
 	//   3: third argument
 	//   ...
 
+	for (int i = 0; i < argc; i++) {
+		std::cout << i+1 << ":" << argv[i] << std::endl;
+	}
 
 	std::cout << "--------------------------\n\n";
 
