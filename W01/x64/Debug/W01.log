@@ -1,6 +1,4 @@
 ﻿  foodorder.cpp
-D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\W01\foodorder.cpp(118,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\W01\foodorder.cpp(127,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   w1_p1.cpp
   Generating Code...
-  W01.vcxproj -> D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\W01\x64\Debug\W01.exe
+  w01.vcxproj -> D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\w01\x64\Debug\w01.exe

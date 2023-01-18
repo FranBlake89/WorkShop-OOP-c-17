@@ -16,22 +16,22 @@ extern double g_taxrate;
 extern double g_dailydiscount;
 
 namespace sdds {
-	static int counter = 1;
 
 	class FoodOrder {
-		char c_order = { 0 };
-		char c_name[lenName + 1] = { '\0' };
-		char c_descrip [lenDesc +1] = { '\0' };
-		double c_price = 0;
-		bool c_IsDaily = false;
+		char c_order;
+		string c_name;
+		string c_descrip;
+		double c_price;
+		bool c_IsDaily;
 
 	private:
-		//void setFoodOrder(string name, string descrip, double price, char daily);
-		void setFoodOrder(char* name, string descrip, double price, char daily);
+		void setFoodOrder( string name,  string descrip, double price, char daily);
 		void setEmpty();
 	public:
+		FoodOrder();
 		void  read(std::istream& in);
 		void display();
+		bool isEmpty();
 
 	};
 
