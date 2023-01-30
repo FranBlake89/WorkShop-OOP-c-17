@@ -1,8 +1,8 @@
 /*
    ---------------------------------------
 Name:		Francisco Castillo
-Seneca Id:	148904212
-e-mail:		fcastillo-rojas1@myseneca.ca
+Seneca Id:	
+e-mail:		
 Section:	NDD
    ---------------------------------------
 */
