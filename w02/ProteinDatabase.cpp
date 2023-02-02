@@ -100,6 +100,7 @@ sdds::ProteinDatabase::ProteinDatabase(const ProteinDatabase& obj)
 ProteinDatabase& ProteinDatabase::operator=(const ProteinDatabase& obj) 
 {
 	if (this != &obj) {
+		//check is empty obj
 		delete[] seqProtein;
 		seqProtein = new std::string[obj.numProtein];
 		numProtein = obj.numProtein;

@@ -6,6 +6,8 @@
 #include <iomanip>
 #include "Collection.h"
 #include "Collection.h"
+#include "Set.h"
+#include "Set.h"
 #include "Pair.h"
 #include "Pair.h"
 
@@ -20,7 +22,7 @@ int main(int argc, char** argv)
 	std::cout << "--------------------------\n\n";
 
 	// Data to be used by the template classes
-	long   iData[]{    16,    12,     9,      3,    21,    12, 23 };
+	long   iData[]{ 16,    12,     9,      3,    21,    12, 23 };
 	double dData[]{ 1.222, 5.777, 1.223, 51.333, 8.888, 1.221 };
 	sdds::Pair pData[]{
 		sdds::Pair("static memory", "memory allocated during the compilation time"),
@@ -54,6 +56,25 @@ int main(int argc, char** argv)
 
 	{
 		std::cout << "******************************************************\n";
+		std::cout << "* Testing the Set of Integers                        *\n";
+		std::cout << "******************************************************\n";
+		sdds::Collection<long, 100>* setIntegers = new sdds::Set<long>();
+
+		for (const auto& item : iData)
+			setIntegers->add(item);
+
+		std::cout << "Set size: [" << setIntegers->size() << "]\n";
+		setIntegers->display();
+
+		std::cout << "Item [0]: " << (*setIntegers)[0] << "\n";
+		std::cout << "Item [5]: " << (*setIntegers)[5] << "\n";
+		std::cout << "Item [9]: " << (*setIntegers)[9] << "\n";
+		std::cout << "******************************************************\n\n";
+		delete setIntegers;
+	}
+
+	{
+		std::cout << "******************************************************\n";
 		std::cout << "* Testing the Collection of Floats                   *\n";
 		std::cout << "******************************************************\n";
 		sdds::Collection<double, 30> colFloats;
@@ -72,6 +93,25 @@ int main(int argc, char** argv)
 
 	{
 		std::cout << "******************************************************\n";
+		std::cout << "* Testing the Set of Floats                          *\n";
+		std::cout << "******************************************************\n";
+		sdds::Collection<double, 100>* setFloats = new sdds::Set<double>;
+
+		for (const auto& item : dData)
+			setFloats->add(item);
+
+		std::cout << "Set size: [" << setFloats->size() << "]\n";
+		setFloats->display();
+
+		std::cout << "Item [0]: " << (*setFloats)[0] << "\n";
+		std::cout << "Item [5]: " << (*setFloats)[5] << "\n";
+		std::cout << "Item [9]: " << (*setFloats)[9] << "\n";
+		std::cout << "******************************************************\n\n";
+		delete setFloats;
+	}
+
+	{
+		std::cout << "******************************************************\n";
 		std::cout << "* Testing the Collection of Pairs                    *\n";
 		std::cout << "******************************************************\n";
 		sdds::Collection<sdds::Pair, 50> colDictionary;
@@ -82,13 +122,35 @@ int main(int argc, char** argv)
 		std::cout << "Collection size: [" << colDictionary.size() << "]\n";
 		colDictionary.display();
 
-		std::cout << "Item [0]: [" << colDictionary[0].getKey()   << "]["
-		                           << colDictionary[0].getValue() << "]\n";
-		std::cout << "Item [8]: [" << colDictionary[8].getKey()   << "]["
-		                           << colDictionary[8].getValue() << "]\n";
-		std::cout << "Item [9]: [" << colDictionary[9].getKey()   << "]["
-		                           << colDictionary[9].getValue() << "]\n";
+		std::cout << "Item [0]: [" << colDictionary[0].getKey() << "]["
+			<< colDictionary[0].getValue() << "]\n";
+		std::cout << "Item [8]: [" << colDictionary[8].getKey() << "]["
+			<< colDictionary[8].getValue() << "]\n";
+		std::cout << "Item [9]: [" << colDictionary[9].getKey() << "]["
+			<< colDictionary[9].getValue() << "]\n";
 		std::cout << "******************************************************\n\n";
+	}
+
+	{
+		std::cout << "******************************************************\n";
+		std::cout << "* Testing the Set of Pairs                           *\n";
+		std::cout << "******************************************************\n";
+		sdds::Collection<sdds::Pair, 100>* setDictionary = new sdds::Set<sdds::Pair>();
+
+		for (const auto& item : pData)
+			setDictionary->add(item);
+
+		std::cout << "Set size: [" << setDictionary->size() << "]\n";
+		setDictionary->display();
+
+		std::cout << "Item [1]: [" << (*setDictionary)[1].getKey() << "]["
+			<< (*setDictionary)[1].getValue() << "]\n";
+		std::cout << "Item [4]: [" << (*setDictionary)[4].getKey() << "]["
+			<< (*setDictionary)[4].getValue() << "]\n";
+		std::cout << "Item [11]: [" << (*setDictionary)[11].getKey() << "]["
+			<< (*setDictionary)[11].getValue() << "]\n";
+		std::cout << "******************************************************\n\n";
+		delete setDictionary;
 	}
 
 	return cout;

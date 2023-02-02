@@ -1,0 +1,17 @@
+In file included from w3_p1_prof.cpp:9:
+Pair.h: In member function ‘sdds::Pair& sdds::Pair::operator==(const sdds::Pair&)’:
+Pair.h:33:2: warning: no return statement in function returning non-void [-Wreturn-type]
+   33 |  }
+      |  ^
+In file included from w3_p1_prof.cpp:7:
+Collection.h: In instantiation of ‘T sdds::Collection<T, CAPACITY>::operator[](int) [with T = long int; long unsigned int CAPACITY = 20]’:
+w3_p1_prof.cpp:49:45:   required from here
+Collection.h:60:14: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   60 |    if (index > CAPACITY) {
+      |        ~~~~~~^~~~~~~~~~
+Collection.h: In instantiation of ‘T sdds::Collection<T, CAPACITY>::operator[](int) [with T = double; long unsigned int CAPACITY = 30]’:
+w3_p1_prof.cpp:67:43:   required from here
+Collection.h:60:14: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+Collection.h: In instantiation of ‘T sdds::Collection<T, CAPACITY>::operator[](int) [with T = sdds::Pair; long unsigned int CAPACITY = 50]’:
+w3_p1_prof.cpp:85:48:   required from here
+Collection.h:60:14: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]

@@ -27,21 +27,21 @@ public:
 	Pair(const std::string& key, const std::string& value) : m_key{ key }, m_value{ value } {};
 	//Two objects of type Pair are considered to be equal if they have the same key.
 	// In the reflection justify why it was necessary to add each one of the members you have decided to add.
-	
+	/*
 	Pair& operator==(const Pair& OBJ) {
-
-	}
+		
+	}*/
 	
 	//isEmpty
 void display(std::ostream& os) const {
-		os << this->m_value << std::endl;
+		os << std::setw(20) << std::right << m_key << ": " << this->m_value;
 
 	};
 
 };
 
 std::ostream& operator<<(std::ostream& os, const Pair& obj) {
-//eturn obj.display(os);
+//return obj.display(os);
 	obj.display(os);
 	return os;
 };
