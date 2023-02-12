@@ -1,0 +1,7 @@
+﻿  Toy.cpp
+C:\Users\franc\OneDrive\Documents\GitHub\WorkShop-OOP\W04\w4\w4\Toy.cpp(17,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\franc\OneDrive\Documents\GitHub\WorkShop-OOP\W04\w4\w4\Toy.cpp(21,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\franc\OneDrive\Documents\GitHub\WorkShop-OOP\W04\w4\w4\Toy.cpp(25,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\franc\OneDrive\Documents\GitHub\WorkShop-OOP\W04\w4\w4\Toy.cpp(36,49): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\franc\OneDrive\Documents\GitHub\WorkShop-OOP\W04\w4\w4\Toy.cpp(37,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  w4.vcxproj -> C:\Users\franc\OneDrive\Documents\GitHub\WorkShop-OOP\W04\w4\x64\Debug\w4.exe
