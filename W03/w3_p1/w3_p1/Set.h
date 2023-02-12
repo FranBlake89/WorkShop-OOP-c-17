@@ -10,6 +10,8 @@ Section:	NDD
 
 #include <iostream>
 #include <string>
+#include <cmath>
+#include <cstdlib>
 
 #include "Pair.h"
 #include "Collection.h"
@@ -24,10 +26,13 @@ namespace sdds {
 
         Set() { ; }
 
-        bool add(const T& item) {
-            for (int i = 0; i < this->m_size; i++)
+        bool add( const T& item) {
+            auto a = item;
+
+            for (size_t i = 0; i < this->m_size; i++)
             {
-                if (item == this->m_items[i])
+                auto b = this->m_items[i];
+                if (a == b)
                 {
                     return false;
                 }
@@ -49,7 +54,7 @@ namespace sdds {
 
         bool add(const double& item) {
 
-            for (int i = 0; i < this->m_size; i++)
+            for (size_t i = 0; i < this->m_size; i++)
             {
                 if (std::fabs(item - this->m_items[i]) <= 0.01)
                 {
