@@ -37,6 +37,11 @@ void display(std::ostream& os) const {
 		os << std::setw(20) << std::right << m_key << ": " << this->m_value;
 
 	};
+/*
+Pair& operator==(const Pair& OBJ) {
+
+}*/
+
 
 };
 
@@ -45,5 +50,11 @@ std::ostream& operator<<(std::ostream& os, const Pair& obj) {
 	obj.display(os);
 	return os;
 };
+
+
+bool operator==(Pair& a, Pair& b) {
+	return a.getKey() == b.getKey();
+}
+
 
 }
