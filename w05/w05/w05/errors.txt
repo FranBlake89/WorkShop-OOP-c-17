@@ -1,0 +1,7 @@
+w5_p1.cpp: In function ‘int main(int, char**)’:
+w5_p1.cpp:79:9: warning: unused variable ‘usdToCadRate’ [-Wunused-variable]
+   79 |  double usdToCadRate = 1.3;
+      |         ^~~~~~~~~~~~
+w5_p1.cpp:80:9: warning: unused variable ‘gbpToCadRate’ [-Wunused-variable]
+   80 |  double gbpToCadRate = 1.5;
+      |         ^~~~~~~~~~~~
