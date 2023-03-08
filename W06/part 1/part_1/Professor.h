@@ -25,6 +25,10 @@ namespace sdds {
 	{
 	private:
 		string m_department{};
+	public:
+		Professor() = default;
+		Professor(std::istream& in);
+
 
 	};
 
