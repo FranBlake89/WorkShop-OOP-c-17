@@ -1,0 +1,43 @@
+Script started on Mon 06 Mar 2023 02:13:43 AM EST
+==179815== Memcheck, a memory error detector
+==179815== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==179815== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==179815== Command: ws college_clean.txt
+==179815== 
+[38;5;9mBegin Testing the Program!
+--------------------------[0m
+
+Command Line:
+--------------------------
+  1: ws
+  2: college_clean.txt
+--------------------------
+
+William Olver++Invalid record!
+------------------------------------------------------------------------------------------------------------------------
+|                                        Test #1 Persons in the college!                                               |
+------------------------------------------------------------------------------------------------------------------------
+| Employee  |  E491910  |  Sara Joseph         | 44  |
+| Employee  |  E789234  |  Jackson Benjamin    | 64  |
+| Employee  |  E360537  |  Mike John           | 54  |
+------------------------------------------------------------------------------------------------------------------------
+|                                        Test #2 Persons in the college!                                               |
+------------------------------------------------------------------------------------------------------------------------
+| Employee  |  E491910  |  Sara Joseph         | 44  |
+| Employee  |  E789234  |  Jackson Benjamin    | 64  |
+| Employee  |  E360537  |  Mike John           | 54  |
+------------------------------------------------------------------------------------------------------------------------
+
+[38;5;9m------------------------
+End Testing the Program![0m
+==179815== 
+==179815== HEAP SUMMARY:
+==179815==     in use at exit: 0 bytes in 0 blocks
+==179815==   total heap usage: 17 allocs, 17 frees, 82,111 bytes allocated
+==179815== 
+==179815== All heap blocks were freed -- no leaks are possible
+==179815== 
+==179815== For lists of detected and suppressed errors, rerun with: -s
+==179815== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Mon 06 Mar 2023 02:13:44 AM EST
