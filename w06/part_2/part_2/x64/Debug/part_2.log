@@ -1,0 +1,8 @@
+﻿  Employee.cpp
+  Professor.cpp
+  Utilities.cpp
+D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\w06\part_2\part_2\Utilities.cpp(140,53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\w06\part_2\part_2\Utilities.cpp(141,51): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  w6_p2.cpp
+  Generating Code...
+  part_2.vcxproj -> D:\OneDrive\WORKSPACE\6.-SENECA_CODE\OOP345-WorkShop\w06\part_2\x64\Debug\part_2.exe

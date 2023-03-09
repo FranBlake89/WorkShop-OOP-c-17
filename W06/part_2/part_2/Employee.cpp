@@ -83,7 +83,7 @@ namespace sdds {
 		out << "  | ";
 		out << setw(3);
 		out << age();
-		out << " |\n";
+		out << " |";
 		
 	}
 

@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
 
 #include "Person.h"
 
@@ -37,7 +38,14 @@ namespace sdds {
 		void display(ostream& out) const;
 
 		~College();
-
+		template <typename T>
+		void select(const T& test, list<const Person*>& persons) {
+			for (auto p : m_persons) {
+				if (test(p)) {
+					persons.push_back(p);
+				}
+			}
+		}
 
 	};
 

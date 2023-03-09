@@ -13,7 +13,9 @@
 
 #include "Utilities.h"
 #include "Employee.h"
+#include "Professor.h"
 #include "Person.h"
+#include "Student.h"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -25,17 +27,21 @@ namespace sdds {
 
     Person* buildInstance(std::istream& input)
     {
+        string line{};
         char tag = input.peek();
-        Employee* emp = nullptr;
-        if (tag == 'e' || tag == 'E') {
-            string line{};
+
+        //Person* emp = nullptr;
+
+        if (tag == 'e' || tag == 'E') {  //CHANGED IN PART 2 ->before was 'e' and 'E'
+            Employee* emp = nullptr;
+            
 
             //get initial position
             streampos init_pos = input.tellg();
 
             if (!errorInLine(input)) {
                 input.seekg(init_pos);
-                emp = new Employee(input);
+                emp = new Professor(input);
                
                return emp;
             }
@@ -43,8 +49,41 @@ namespace sdds {
                 return nullptr;
             }
         }
+        else if (tag == 'p' || tag == 'P') {  //CHANGED IN PART 2 ->before was 'e' and 'E'
+            Professor* prof = nullptr;
+            //string line{};
+
+            //get initial position
+            streampos init_pos = input.tellg();
+
+            if (!errorInLine(input)) {
+                input.seekg(init_pos);
+                prof = new Professor(input);
+
+                return prof;
+            }
+            else {
+                return nullptr;
+            }
+        }
+        else if (tag == 's' || tag == 'S') {
+            //string line{};
+            Student* stud = nullptr;
+            //get initial position
+            streampos init_pos = input.tellg();
+
+            if (!errorInLine(input)) {
+                input.seekg(init_pos);
+                stud = new Student(input);
+
+                return stud;
+            }
+            else {
+                return nullptr;
+            }
+        }
         else {
-            string line;
+            //string line;
             getline(input, line);
             return nullptr;
         }
@@ -66,7 +105,7 @@ namespace sdds {
             errors = true;
         }
 
-        getline(is, temp);
+        getline(is, temp, ',');
         id = trim(temp);
         try {
             if (toupper(id[0]) != toupper(tag[0])) {
@@ -77,6 +116,7 @@ namespace sdds {
         catch (const string& e) {
             cout << e << endl;
         }
+        getline(is, temp);
 
         return errors;
     }

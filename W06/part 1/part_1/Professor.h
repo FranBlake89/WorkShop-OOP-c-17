@@ -28,6 +28,10 @@ namespace sdds {
 	public:
 		Professor() = default;
 		Professor(std::istream& in);
+		void display(ostream& out);
+		string status() const;
+		string department() const;
+
 
 
 	};
