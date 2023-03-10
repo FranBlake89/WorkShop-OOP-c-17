@@ -13,6 +13,7 @@ Date: 2023-mm-dd
 #include <iomanip>
 
 #include "Book.h"
+using namespace std;
 namespace sdds {
 	void Book::setObject(const string& author, const string& title, const string& country, const string& descrip, const size_t& year, const double& price)
 	{
@@ -91,7 +92,7 @@ namespace sdds {
 		else
 			cout << "ERROR CONSTRUCTOR ........." << endl;
 	}
-	string Book::removeSpace(const string& str)
+	std::string Book::removeSpace(const string& str)
 	{
 		string strNew{};
 		strNew = str;
