@@ -83,8 +83,23 @@ namespace sdds {
 		out << "  | ";
 		out << setw(3);
 		out << age();
-		out << " |";
+		out << " |\n";
 		
+	}
+
+	void Employee::setName(string name)
+	{
+		m_name = name;
+	}
+
+	void Employee::setID(string ID)
+	{
+		m_id = ID;
+	}
+
+	void Employee::setAge(size_t age)
+	{
+		m_age = age;
 	}
 
 

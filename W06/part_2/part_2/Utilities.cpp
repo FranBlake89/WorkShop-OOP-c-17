@@ -41,7 +41,7 @@ namespace sdds {
 
             if (!errorInLine(input)) {
                 input.seekg(init_pos);
-                emp = new Professor(input);
+                emp = new Employee(input);
                
                return emp;
             }
@@ -94,29 +94,43 @@ namespace sdds {
         bool errors = false;
 
         string tag, name, is_num, id, temp;
-
-        getline(is, tag, ','); // get the tag, which is ignored
+        getline(is, tag, ',');
         getline(is, temp, ',');
         name = trim(temp);
 
-        getline(is, is_num, ',');
-
-        if (!isNumber(is_num)) {
-            errors = true;
-        }
-
         getline(is, temp, ',');
-        id = trim(temp);
+        is_num = trim(temp);
+
         try {
-            if (toupper(id[0]) != toupper(tag[0])) {
+            if (!isNumber(is_num)) {
                 errors = true;
-                throw string(name + "++Invalid record!");
+               throw string(name + "++Invalid record!");
             }
         }
         catch (const string& e) {
             cout << e << endl;
         }
-        getline(is, temp);
+
+        if (tag[0] == 'e' || tag[0] == 'E')
+            getline(is, temp);
+        else if (errors)
+            getline(is, temp);
+        else
+            getline(is, temp, ',');
+
+        id = trim(temp);
+
+        if (tag[0] != 'p' && tag[0] != 'P') {
+            try {
+                if (toupper(id[0]) != toupper(tag[0])) {
+                    errors = true;
+                    throw string(name + "++Invalid record!");
+                }
+            }
+            catch (const string& e) {
+                cout << e << endl;
+            }
+        }
 
         return errors;
     }

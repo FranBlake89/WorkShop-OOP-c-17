@@ -14,6 +14,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <sstream>
+
 
 #include "Professor.h"
 #include "Employee.h"
@@ -40,14 +42,27 @@ namespace sdds {
 			getline(in, id, ',');
 			
 			
+			try {
+				if (t != 'p' && t != 'P')
+					throw string("Invalid tag expected 'p' or 'P'.");
+				else {
+					getline(in, department);
+					//cout << tag << name << age << id << department;
+					m_department = department;
+					setName(name);
+					setID(id);
 
-			if (t != 'p' && t != 'P')
-				throw "Invalid tag expected 'p' or 'P'.";
-			else {
-				getline(in, department, ',');
-				cout << tag << name << age << id << department;
-				m_department = department;
+					size_t newAge;
+					stringstream sstream(age);
+					sstream >> newAge;
+					setAge(newAge);
+				}
 			}
+			catch (const string& e) {
+				cout << e << endl;
+			}
+			
+
 
 		}
 	}

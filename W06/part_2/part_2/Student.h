@@ -12,6 +12,7 @@
 */
 #include <iostream>
 #include <string>
+#include<vector>
 
 #include "Person.h"
 
@@ -22,7 +23,7 @@ namespace sdds {
 	private:
 		string m_name{};
 		string m_id{};
-		string* m_courses;
+		vector<string> m_courses;
 		unsigned int m_age{};
 		int m_num_courses{};
 
