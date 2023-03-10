@@ -130,13 +130,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
-    <ClCompile Include="w5_p1.cpp" />
+    <ClCompile Include="Collection.cpp" />
+    <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="SpellChecker.cpp" />
+    <ClCompile Include="w5_p2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="books.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Collection.h" />
+    <ClInclude Include="Movie.h" />
+    <ClInclude Include="SpellChecker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

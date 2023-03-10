@@ -39,8 +39,9 @@ namespace sdds {
         temp.erase(0, third + 1);
 
         double price = std::stod(temp);
-
-
+        //*****************************************
+        //use trim(word) instead of this below
+        //****************************************
         // Removing blank spaces from 
         int first_No_blank{}, last_No_blank{};
         size_t length{};
@@ -48,6 +49,7 @@ namespace sdds {
         first_No_blank = name.find_first_not_of(' ');
         last_No_blank = name.find_last_not_of(' ');
         length = name.length();
+
 
         //stack overflow --> BACK() , Prof. --> FRONT()
         if (name.front() == ' ')

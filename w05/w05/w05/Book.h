@@ -1,8 +1,12 @@
+
 /*
 Name: Francisco Castillo
+Course: OOP
 Section: NDD
 Seneca ID: 148904212
+Date: 2023-mm-dd
 */
+
 #pragma once
 #define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
