@@ -71,7 +71,7 @@ namespace sdds {
 		out << "| ";
 		out << setw(10);
 		out << left;
-		out << status();
+		out << Employee::status();
 		out << "|";
 		out << setw(10);
 		out << left;
@@ -83,7 +83,7 @@ namespace sdds {
 		out << "  | ";
 		out << setw(3);
 		out << age();
-		out << " |\n";
+		out << " |" << endl;
 		
 	}
 

@@ -69,7 +69,22 @@ namespace sdds {
 
 	void Professor::display(ostream& out)
 	{
-		Employee::display(out);
+
+		out << "***| ";
+		out << setw(10);
+		out << left;
+		out << Employee::status();
+		out << "|";
+		out << setw(10);
+		out << left;
+		out << id();
+		out << " |";
+		out << setw(20);
+		out << left;
+		out << name();
+		out << "  | ";
+		out << setw(3);
+		out << age();
 		out << " |" << m_department << "|" << '"' << status() << '"' << endl;
 
 

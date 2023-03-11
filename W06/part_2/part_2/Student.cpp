@@ -92,8 +92,23 @@ namespace sdds {
 
 	void Student::display(ostream& out) const
 	{
-		out << m_name <<" " << m_id << " " 
-			<< m_age << " "<< m_num_courses;
+		out << "| ";
+		out << setw(10);
+		out << left;
+		out << status();
+		out << "|";
+		out << setw(10);
+		out << left;
+		out << id();
+		out << " |";
+		out << setw(20);
+		out << left;
+		out << name();
+		out << "  | ";
+		out << setw(3);
+		out << age();
+		out << " |";
+	
 		for (auto& student : m_courses) {
 			out << " " << student;
 		}
