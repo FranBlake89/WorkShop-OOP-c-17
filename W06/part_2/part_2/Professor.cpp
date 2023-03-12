@@ -48,9 +48,9 @@ namespace sdds {
 				else {
 					getline(in, department);
 					//cout << tag << name << age << id << department;
-					m_department = department;
-					setName(name);
-					setID(id);
+					m_department = trim(department);
+					setName(trim(name));
+					setID(trim(id));
 
 					size_t newAge;
 					stringstream sstream(age);
@@ -67,25 +67,12 @@ namespace sdds {
 		}
 	}
 
-	void Professor::display(ostream& out)
+	void Professor::display(ostream& out) const
 	{
 
-		out << "***| ";
-		out << setw(10);
-		out << left;
-		out << Employee::status();
-		out << "|";
-		out << setw(10);
-		out << left;
-		out << id();
-		out << " |";
-		out << setw(20);
-		out << left;
-		out << name();
-		out << "  | ";
-		out << setw(3);
-		out << age();
-		out << " |" << m_department << "|" << '"' << status() << '"' << endl;
+		//out << "*P| ";
+		Employee::display(out);
+		out << m_department << "| " << status();
 
 
 	}
@@ -99,5 +86,4 @@ namespace sdds {
 	{
 		return m_department;
 	}
-
 }

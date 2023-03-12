@@ -25,9 +25,6 @@ namespace sdds {
 	Student::Student(istream& in)
 	{
 		if (in) {
-			//PROBLEM WITH STUDENT CHECK AGE THROW ERROR 
-			//sophia aiden doesn't print out
-			//s, Sophia Aiden,se79, S902890
 			string temp, tag, name, age, id, num_courses, list_courses;
 			int count_courses{};
 
@@ -56,14 +53,14 @@ namespace sdds {
 
 			while (count_courses != 2) {
 				getline(in, list_courses, ',');
-				m_courses.push_back(list_courses);
+				m_courses.push_back(trim(list_courses));
 				count_courses--;
 			}
 			getline(in, list_courses);
-			m_courses.push_back(list_courses);
+			m_courses.push_back(trim(list_courses));
 
-			m_name = name;
-			m_id = id;
+			m_name = trim(name);
+			m_id = trim(id);
 			m_age = stoi(age);
 			m_num_courses = stoi(num_courses);
 			
@@ -96,23 +93,28 @@ namespace sdds {
 		out << setw(10);
 		out << left;
 		out << status();
-		out << "|";
+		out << "| ";
 		out << setw(10);
 		out << left;
 		out << id();
-		out << " |";
+		out << "| ";
 		out << setw(20);
 		out << left;
 		out << name();
-		out << "  | ";
+		out << " | ";
 		out << setw(3);
 		out << age();
 		out << " |";
 	
+		string the_last_of_cs = m_courses.back();
+
 		for (auto& student : m_courses) {
-			out << " " << student;
+			out << student;
+			
+			if( student != the_last_of_cs)
+				out<< ", ";
 		}
-		out << "\n";// << m_name << " " << m_id << " " << m_courses << endl;
+		
 	}
 
 }

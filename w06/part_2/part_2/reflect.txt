@@ -1,0 +1,16 @@
+Francisco castillo
+
+Reflect
+
+In Workshop 6, we learned how to use the STL's vector containers to manage polymorphic objects.
+We also learned how to move dynamically allocated objects into containers, how to code scope-based iteration over objects in containers, and how to report and handle exceptions.
+The focus of the workshop was the creation of an application simulating a College management system.
+This application is designed to manage information about staff, students and professors.
+First, I created a person hierarchy consisting of person classes provided in the workshop. The Person class was an abstract class that served as the base class for the Employee, Student, and Professor classes.
+Next, we created the Employee module.
+This module defines a class that contains information about a single employee.
+This constructor can read a single record from the stream, extract all information about a single employee and store it in attributes.
+Each record had a specific format, such as tags, name, age, and employee ID. STL vector containers were used throughout the workshop to store information about staff, students, and professors.
+I was able to move a dynamically allocated object into a container and use range-based iteration to iterate over the object.
+One of the most important concepts learned in this workshop was how to report and handle exceptions.
+It helped me develop my skills in using STL containers, working with polymorphic objects, and reporting and handling exceptions. 

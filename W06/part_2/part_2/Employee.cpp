@@ -18,6 +18,7 @@
 
 #include "Employee.h"
 #include "Utilities.h"
+#include "Professor.h"
 
 using namespace std;
 
@@ -25,24 +26,15 @@ namespace sdds {
 
 	Employee::Employee(istream& is)
 	{
-		string tag{};
+		string tag{}, name{}, id{}, temp{};
 		char comma{};
 		getline(is, tag, ',');
-		getline(is, m_name, ',');
-		
-		//cout << "name " <<m_name <<endl;
-		if (m_name.empty())
-			throw invalid_argument("Error in name");
-
+		getline(is, name, ',');
 		is >> m_age >> comma;
-		//cout << "age " << m_age << " comma " << comma << endl;
-		if (!is || comma != ',')
-			throw invalid_argument(m_name + "++Invalid record! (1)");
-
-		getline(is, m_id);
-		//cout << "id " << m_id << " comma " << comma << endl;
-		if (m_id.empty() )
-			throw invalid_argument(m_name + "++Invalid record! (2)");
+		getline(is, id);
+		
+		m_name = trim(name);
+		m_id = trim(id);
 		
 	}
 
@@ -72,18 +64,18 @@ namespace sdds {
 		out << setw(10);
 		out << left;
 		out << Employee::status();
-		out << "|";
+		out << "| ";
 		out << setw(10);
 		out << left;
 		out << id();
-		out << " |";
+		out << "| ";
 		out << setw(20);
 		out << left;
 		out << name();
-		out << "  | ";
+		out << " | ";
 		out << setw(3);
 		out << age();
-		out << " |" << endl;
+		out << " |";
 		
 	}
 
