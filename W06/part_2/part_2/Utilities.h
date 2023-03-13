@@ -26,6 +26,6 @@ namespace sdds {
     bool isNumber(const string& str);
     string trim(const string& str);
 
-}
+} 
 
 #endif // !SDDS_UTILITIES_H

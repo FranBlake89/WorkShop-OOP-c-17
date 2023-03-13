@@ -1,3 +1,16 @@
+
+/*
+> Name: Francisco Castillo
+> Course: OOP
+> Section: NDD
+> Seneca ID: 148904212
+> Seneca email: fcastillo-rojas1@myseneca.ca
+> Date of completion: 2023-mm-dd
+
+* I confirm that I am the only author of this file
+ and the content was created entirely by me.
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,6 +18,7 @@
 
 #include "College.h"
 #include "Person.h"
+#include "Professor.h"
 
 using namespace std;
 
@@ -33,8 +47,15 @@ namespace sdds {
         }
        
         for (size_t i = 0; i < m_persons.size(); ++i) {
+         
+               //This is usefull when the professor display function is not const, so it is not overrride
+                // Professor professor = dynamic_cast<Professor&>(*m_persons[i]);
+               // professor.display(out);
+               
             m_persons[i]->display(out);
+            out << endl;
         }
+        
         
         out << "------------------------------------------------------------------------------------------------------------------------" << endl;
         out << "|                                        Test #2 Persons in the college!                                               |" << endl;
@@ -45,15 +66,15 @@ namespace sdds {
                 << setw(10)
                 << left
                 << person->status()
-                << "|"
+                << "| "
                 << setw(10)
                 << left
                 << person->id()
-                << " |"
+                << "| "
                 << setw(20)
                 << left
                 << person->name()
-                << "  | "
+                << " | "
                 << setw(3)
                 << person->age()
                 << " |" << endl;

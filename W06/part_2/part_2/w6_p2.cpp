@@ -1,3 +1,16 @@
+
+/*
+> Name: Francisco Castillo
+> Course: OOP
+> Section: NDD
+> Seneca ID: 148904212
+> Seneca email: fcastillo-rojas1@myseneca.ca
+> Date of completion: 2023-mm-dd
+
+* I confirm that I am the only author of this file
+ and the content was created entirely by me.
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -5,6 +18,8 @@
 #include "Utilities.h"
 #include "College.h"
 #include "College.h"
+#include "Student.h"
+#include "Professor.h"
 
 void loadData(const char* filename, sdds::College& theCollege)
 {
@@ -43,7 +58,9 @@ int main(int argc, char** argv)
 	{
 		// TODO: Create a lambda expression that receives as parameter `const sdds::Person*`
 		//         and returns true if the person is student.
-		auto students = ...;
+		auto students = [](const sdds::Person* p) {
+			return dynamic_cast<const sdds::Student*>(p) != nullptr;
+		};
 		theCollege.select(students, persons);
 	
 		std::cout << "|                                        Test #3 Students in the college!                                              |\n";
@@ -60,7 +77,10 @@ int main(int argc, char** argv)
 	{
 		// TODO: Create a lambda expression that receives as parameter `const sdds::Person*`
 		//         and returns true if the person is professor.
-		auto professors = ... ;
+		std::list<const sdds::Person*> persons;
+		auto professors = [](const sdds::Person* p) {
+			return dynamic_cast<const sdds::Professor*>(p) != nullptr;
+		};
 		theCollege.select(professors, persons);
 	
 		std::cout << "|                                        Test #4 Professors in the college!                                            |\n";

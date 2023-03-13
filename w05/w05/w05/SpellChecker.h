@@ -7,22 +7,25 @@ Seneca ID: 148904212
 Date: 2023-mm-dd
 */
 
-#ifndef SDDS_SPELLCHECKER_H
-#define SDDS_SPELLCHECKER_H
-
+#pragma once
+#define  _CRT_SECURE_NO_WARNINGS
+#include <iostream>
 #include <string>
-const int noOfWords = 6;
+#include <cstring>
+
+using namespace std;
+
 namespace sdds {
+
 	class SpellChecker
 	{
-		std::string m_badWords[noOfWords]{};
-		std::string m_goodWords[noOfWords]{};
-		int m_numReplaced[noOfWords]{};
+		string m_badWords[6];
+		string m_goodWords[6];
+
 	public:
 		SpellChecker(const char* filename);
-		void operator()(std::string& text);
-		void showStatistics(std::ostream& out) const;
+		void operator()(string& text);
+		void showStatistics(ostream& out) const;
 	};
 }
 
-#endif //!SDDS_SPELLCHECKER_H

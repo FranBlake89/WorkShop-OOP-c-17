@@ -36,7 +36,9 @@ namespace sdds {
 		string id() const override;
 		string age() const override;
 		void display(ostream& out)const override; // query inserts in the first parameter the content of the employee object in the format | "EMPLOYEE" | id | name | age |
-
+		void setName(string name);
+		void setID(string ID);
+		void setAge(size_t age);
 
 	};
 }

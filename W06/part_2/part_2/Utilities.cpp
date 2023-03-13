@@ -13,7 +13,9 @@
 
 #include "Utilities.h"
 #include "Employee.h"
+#include "Professor.h"
 #include "Person.h"
+#include "Student.h"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -25,10 +27,14 @@ namespace sdds {
 
     Person* buildInstance(std::istream& input)
     {
+        string line{};
         char tag = input.peek();
-        Employee* emp = nullptr;
-        if (tag == 'e' || tag == 'E') {
-            string line{};
+
+        //Person* emp = nullptr;
+
+        if (tag == 'e' || tag == 'E') {  //CHANGED IN PART 2 ->before was 'e' and 'E'
+            Employee* emp = nullptr;
+            
 
             //get initial position
             streampos init_pos = input.tellg();
@@ -43,8 +49,41 @@ namespace sdds {
                 return nullptr;
             }
         }
+        else if (tag == 'p' || tag == 'P') {  //CHANGED IN PART 2 ->before was 'e' and 'E'
+            Professor* prof = nullptr;
+            //string line{};
+
+            //get initial position
+            streampos init_pos = input.tellg();
+
+            if (!errorInLine(input)) {
+                input.seekg(init_pos);
+                prof = new Professor(input);
+
+                return prof;
+            }
+            else {
+                return nullptr;
+            }
+        }
+        else if (tag == 's' || tag == 'S') {
+            //string line{};
+            Student* stud = nullptr;
+            //get initial position
+            streampos init_pos = input.tellg();
+
+            if (!errorInLine(input)) {
+                input.seekg(init_pos);
+                stud = new Student(input);
+
+                return stud;
+            }
+            else {
+                return nullptr;
+            }
+        }
         else {
-            string line;
+            //string line;
             getline(input, line);
             return nullptr;
         }
@@ -55,27 +94,42 @@ namespace sdds {
         bool errors = false;
 
         string tag, name, is_num, id, temp;
-
-        getline(is, tag, ','); // get the tag, which is ignored
+        getline(is, tag, ',');
         getline(is, temp, ',');
         name = trim(temp);
 
-        getline(is, is_num, ',');
+        getline(is, temp, ',');
+        is_num = trim(temp);
 
-        if (!isNumber(is_num)) {
-            errors = true;
-        }
-
-        getline(is, temp);
-        id = trim(temp);
         try {
-            if (toupper(id[0]) != toupper(tag[0])) {
+            if (!isNumber(is_num)) {
                 errors = true;
-                throw string(name + "++Invalid record!");
+               throw string(name + "++Invalid record!");
             }
         }
         catch (const string& e) {
             cout << e << endl;
+        }
+
+        if (tag[0] == 'e' || tag[0] == 'E')
+            getline(is, temp);
+        else if (errors)
+            getline(is, temp);
+        else
+            getline(is, temp, ',');
+
+        id = trim(temp);
+
+        if (tag[0] != 'p' && tag[0] != 'P') {
+            try {
+                if (toupper(id[0]) != toupper(tag[0])) {
+                    errors = true;
+                    throw string(name + "++Invalid record!");
+                }
+            }
+            catch (const string& e) {
+                cout << e << endl;
+            }
         }
 
         return errors;
